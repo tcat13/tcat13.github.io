@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>หญ้าพันธุ์วัวชน - ชุมชนป่าพะยอม</title>
+  <style>
+    body {
+      font-family: "Prompt", sans-serif;
+      background-color: #f3f4f6;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #2f855a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .intro {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      width: 250px;
+      text-align: center;
+      padding: 15px;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    .card h3 {
+      color: #2f855a;
+    }
+
+    .btn {
+      background-color: #2f855a;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background-color: #276749;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #e2e8f0;
+      color: #4a5568;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🌿 หญ้าพันธุ์วัวชน</h1>
+    <p>โดยชุมชนป่าพะยอม จังหวัดพัทลุง</p>
+  </header>
+
+  <div class="intro">
+    <p>เราจัดจำหน่ายหญ้าพันธุ์คุณภาพดี สำหรับวัวชน เช่น หญ้าเนเปียร์ปากช่อง หญ้าหวานอินเดีย ฯลฯ</p>
+    <button class="btn" onclick="alert('โทร: 089-xxx-xxxx\nLINE: @cowgrass')">📞 ติดต่อเรา</button>
+  </div>
+
+  <section class="products" id="product-list">
+    <!-- Product cards will be inserted here -->
+  </section>
+
+  <footer>
+    &copy; 2025 ชุมชนป่าพะยอม จังหวัดพัทลุง | พัฒนาเพื่อเกษตรกรท้องถิ่น
+  </footer>
+
+  <script>
+    const products = [
+      {
+        name: "หญ้าเนเปียร์ปากช่อง 1",
+        image: "https://via.placeholder.com/250x150?text=เนเปียร์+ปากช่อง",
+        price: "15 บาท/กิ่ง"
+      },
+      {
+        name: "หญ้าหวานอินเดีย",
+        image: "https://via.placeholder.com/250x150?text=หญ้าหวาน+อินเดีย",
+        price: "20 บาท/กิ่ง"
+      },
+      {
+        name: "หญ้าแฝก",
+        image: "https://via.placeholder.com/250x150?text=หญ้าแฝก",
+        price: "10 บาท/กอ"
+      }
+    ];
+
+    const container = document.getElementById("product-list");
+
+    products.forEach(product => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <img src="${product.image}" alt="${product.name}" />
+        <h3>${product.name}</h3>
+        <p>${product.price}</p>
+        <button class="btn" onclick="alert('สนใจสั่งซื้อ ${product.name} กรุณาติดต่อทางโทรศัพท์หรือ LINE')">สั่งซื้อ</button>
+      `;
+      container.appendChild(card);
+    });
+  </script>
+
+</body>
+</html>
