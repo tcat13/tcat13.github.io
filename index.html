@@ -48,11 +48,13 @@
 
     .card img {
       width: 100%;
+      height: auto;
       border-radius: 6px;
     }
 
     .card h3 {
       color: #2f855a;
+      margin-top: 10px;
     }
 
     .btn {
@@ -63,6 +65,7 @@
       border-radius: 4px;
       cursor: pointer;
       margin-top: 10px;
+      font-size: 1em;
     }
 
     .btn:hover {
@@ -74,6 +77,7 @@
       padding: 20px;
       background-color: #e2e8f0;
       color: #4a5568;
+      margin-top: 30px;
     }
   </style>
 </head>
@@ -84,14 +88,16 @@
     <p>โดยชุมชนป่าพะยอม จังหวัดพัทลุง</p>
   </header>
 
-  <div class="intro">
-    <p>เราจัดจำหน่ายหญ้าพันธุ์คุณภาพดี สำหรับวัวชน เช่น หญ้าเนเปียร์ปากช่อง หญ้าหวานอินเดีย ฯลฯ</p>
-    <button class="btn" onclick="alert('โทร: 081-586-2646\nthankpws.13@gmail.com')">📞 ติดต่อเรา</button>
-  </div>
+  <main>
+    <section class="intro">
+      <p>เราจัดจำหน่ายหญ้าพันธุ์คุณภาพดี สำหรับวัวชน เช่น หญ้าเนเปียร์ปากช่อง หญ้าหวานอินเดีย ฯลฯ</p>
+      <button class="btn" onclick="alert('โทร: 081-586-2646\nอีเมล: thankpws.13@gmail.com')">📞 ติดต่อเรา</button>
+    </section>
 
-  <section class="products" id="product-list">
-    <!-- Product cards will be inserted here -->
-  </section>
+    <section class="products" id="product-list">
+      <!-- รายการสินค้าจะถูกเพิ่มโดย JavaScript -->
+    </section>
+  </main>
 
   <footer>
     &copy; 2025 ชุมชนป่าพะยอม จังหวัดพัทลุง | พัฒนาเพื่อเกษตรกรท้องถิ่น
@@ -122,7 +128,7 @@
       const card = document.createElement("div");
       card.className = "card";
       card.innerHTML = `
-        <img src="${product.image}" alt="${product.name}" />
+        <img src="${product.image}" alt="ภาพของ ${product.name}" />
         <h3>${product.name}</h3>
         <p>${product.price}</p>
         <button class="btn" onclick="alert('สนใจสั่งซื้อ ${product.name} กรุณาติดต่อทางโทรศัพท์หรือ LINE')">สั่งซื้อ</button>
@@ -133,3 +139,4 @@
 
 </body>
 </html>
+
